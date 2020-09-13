@@ -38,5 +38,7 @@ kafka-topics --describe --topic com.city.sf.police.department.calls.v1 --zookeep
 To check Producer is producing correct records,run Consumer through CLI. ----
 kafka-console-consumer --topic "com.city.sf.police.department.calls.v1" --bootstrap-server PLAINTEXT://localhost:9092 --from-beginning
 
+To Run consumer Server. ----- python consumer_server.py
+
 To run data_stream.py ----
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 data_stream.py
