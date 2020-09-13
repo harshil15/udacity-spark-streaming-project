@@ -18,25 +18,25 @@ spark.streaming.kafka.maxRatePerPartition - 80
 
 
 EXECUTION STEPS 
-To start Zookeeper
+To start Zookeeper. --- 
 Run ./start_zookeeper.sh
 
-To Start Kafka Broker
+To Start Kafka Broker ---
 Run ./start_kafka.sh
 
 
-To start producing police call records in Topic through Kafka Producer call 
+To start producing police call records in Topic through Kafka Producer call  ----
 python kafka_server.py 
 
-To list topic through Kafka CLI
+To list topic through Kafka CLI. ----
 kafka-topics --list --zookeeper localhost:2181
 
-Details about project topic 
+Details about project topic  ----
 kafka-topics --describe --topic com.city.sf.police.department.calls.v1 --zookeeper localhost:2181
 
 
-To check Producer is producing correct records,run Consumer through CLI
+To check Producer is producing correct records,run Consumer through CLI. ----
 kafka-console-consumer --topic "com.city.sf.police.department.calls.v1" --bootstrap-server PLAINTEXT://localhost:9092 --from-beginning
 
-To run data_stream.py 
+To run data_stream.py ----
 spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 data_stream.py
